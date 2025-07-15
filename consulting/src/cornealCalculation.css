@@ -1,0 +1,223 @@
+/* ==========================
+   배경: 어두운 남색 우주 + 별 + 유성
+========================== */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 배경 전체 영역 */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #01011d, #142840, #000000);
+  background-size: 300% 300%;
+  animation: bgMove 20s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 반짝이는 별 */
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+
+/* 유성 */
+.shooting-star {
+  position: absolute;
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.363), transparent);
+  opacity: 0;
+  transform: rotate(60deg);
+  animation: shoot 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes shoot {
+  0% {
+    transform: translate(0, 0) rotate(60deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(300px, 520px) rotate(60deg);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* ==========================
+   입력 컨테이너 (밝은 glassmorphism + 반사광)
+========================== */
+.input-container {
+  width: 50vw;
+  padding: 40px 45px;
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.075);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    0 0 15px rgba(173, 216, 255, 0.15); /* 반사광 */
+
+  color: #ffffff;
+  box-sizing: border-box;
+  text-align: center;
+  z-index: 2;
+}
+
+.input-container:hover {
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.4),
+    0 0 25px rgba(173, 216, 255, 0.25);
+}
+
+/* 제목 */
+.input-container h2 {
+  margin-bottom: 25px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #cfeeff;
+  text-shadow: 0 0 8px rgba(173, 216, 255, 0.6);
+}
+
+/* 양쪽 눈 입력 */
+.eye-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.eye-block {
+  flex: 1 1 40%;
+  background: rgba(20, 30, 50, 0.658); /* 어두운 남청색 반투명 */
+  padding: 20px 24px;
+  border-radius: 16px;
+  box-shadow:
+    inset 0 0 12px rgba(0, 0, 0, 0.5),
+    0 0 12px rgba(173, 216, 255, 0.1);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+}
+
+/* 제목 */
+.eye-block h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #a9d6ff;
+  text-shadow: 0 0 5px rgba(173, 216, 255, 0.3);
+}
+
+/* 라벨 */
+.input-container label {
+  display: block;
+  text-align: left;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #cce6ff;
+}
+
+/* 인풋 */
+.input-container input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+  box-sizing: border-box;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.input-container input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #88cfff;
+  font-size: 1.5rem;
+  box-shadow: 0 0 8px rgba(173, 216, 255, 0.3);
+}
+
+.input-container input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* 버튼 */
+.input-container button {
+  width: 100%;
+  padding: 16px;
+  margin-top: 16px;
+  border-radius: 16px;
+  border: none;
+  background: #2195e2;
+  color: #f1f2f6;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 20px rgba(41, 127, 185, 0.315);
+}
+
+.input-container button:hover {
+  background: #1e6fa3;
+  box-shadow: 0 10px 28px rgba(28, 89, 128, 0.7);
+}
+
+.error-message {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px; /* 더 작게 */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color: #ff030334; /* 진한 붉은색 배경 */
+  padding: 4px 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1.5px solid #ff0000;
+  box-shadow: 0 0 6px rgba(255, 0, 0, 0.4);
+  letter-spacing: 0.3px;
+}

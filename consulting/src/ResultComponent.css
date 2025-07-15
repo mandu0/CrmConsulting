@@ -1,0 +1,273 @@
+.inputContainer {
+  width: 79vw;
+  margin: 20px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  /* 투명창 스타일 */
+  background: rgba(252, 252, 252, 0.062);
+  /* 거의 흰색에 약간 투명 */
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 30px 40px;
+  backdrop-filter: blur(12px);
+  /* 뒤 배경을 흐릿하게 */
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.inputBox{
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.eyes-wrapper {
+  display: flex;
+  gap: 40px;
+  /* 좌우 사이 간격 */
+  flex-wrap: wrap;
+  /* 좁은 화면에서는 밑으로 내려가게 */
+  justify-content: center;
+}
+
+.eye-heading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 3px solid #4a90e2;
+  color: #2a5d9f;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.eye-heading h2 {
+  margin: 0;
+}
+
+.eye-heading span {
+  font-size: 1.5rem;
+}
+
+
+.eye-block-container {
+  background: #fafafa;
+  /* 흰색 약간 투명 */
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  flex: 1 1 400px;
+  /* 좌우 공간 균등 분배, 최소 400px */
+  transition: transform 0.25s ease;
+}
+
+.eye-block-container h3 {
+  border-bottom: 3px solid #4a90e2;
+  color: #2a5d9f;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.eye-block-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+.eye-block-container ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.eye-block-container ul li {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th,
+td {
+  border: 1px solid #cfd8dc;
+  padding: 10px 15px;
+  text-align: center;
+}
+
+th {
+  background-color: #4a90e2;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tdblue {
+  font-weight: 700;
+  background-color: #e3f0fc;
+  color: #2a5d9f;
+}
+
+.result {
+  margin-bottom: 25px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(173, 216, 255, 0.6);
+}
+
+.summary-bars {
+  width: 80%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.summaryTitle {
+  font-size: 1.1rem;
+  color: #f8f8f8;
+  margin: 0px;
+  /* 위쪽 마진 0, 아래쪽만 8px */
+}
+
+.summary-section {
+  display: flex;
+  align-items: flex-start;
+  margin: 30px 0;
+  gap: 20px;
+}
+
+.summaryBox {
+  width: 90%;
+}
+
+.summary-label {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.summary-bar {
+  display: flex;
+  height: 24px;
+  font-size: 0.9rem;
+  line-height: 24px;
+  color: #333;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+
+/* 동공 크기 색상 바 형태 */
+.pupil-bar {
+  display: flex;
+  height: 30px;
+  font-size: 1rem;
+  line-height: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+}
+
+.pupil-bar>div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right: 1px solid #fff;
+}
+
+.pupil-bar>div:last-child {
+  border-right: none;
+}
+
+/* 색상 지정 */
+.pupil-small {
+  background-color: #1b4f72;
+  /* 연한 파랑 */
+}
+
+.pupil-normal {
+  background-color: #5dade2;
+  /* 일반 파랑 */
+}
+
+.pupil-large {
+  background-color: #1b4f72;
+  /* 연한 파랑 */
+}
+
+/* 바 아래 설명 */
+.pupil-desc-bar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-top: 4px;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  padding: 0 6px;
+}
+
+
+
+/* 각막 두께 색상 */
+.summary-section {
+  margin-top: 24px;
+}
+
+.summary-bar,
+.label-bar {
+  display: flex;
+}
+
+.summary-bar>div,
+.label-bar>div {
+  flex: 1;
+  text-align: center;
+}
+
+.thickness-bar>div {
+  height: 30px;
+  border-right: 1px solid #fff;
+}
+
+.thickness-bar>div:last-child {
+  border-right: none;
+}
+
+.thin-1 {
+  background-color: #d6eaf8;
+}
+
+.thin-2 {
+  background-color: #aed6f1;
+}
+
+.average {
+  background-color: #5dade2;
+}
+
+.thick-1 {
+  background-color: #2e86c1;
+}
+
+.thick-2 {
+  background-color: #1b4f72;
+}
+
+.label-bar>div {
+  font-size: 14px;
+  margin-top: 4px;
+  color: white;
+  font-weight: 700;
+}

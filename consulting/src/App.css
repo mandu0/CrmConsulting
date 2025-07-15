@@ -1,0 +1,53 @@
+/* 상단 우측 정렬 컨테이너 */
+.date-time-wrapper {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+  }
+  
+  /* 날짜 표시 */
+  .date-time-display {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    padding: 8px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* 홈 버튼 - 날짜와 동일한 크기/모양/톤 */
+  .home-button {
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, border-color 0.3s, transform 0.2s;
+  }
+  
+  .home-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 1);
+    transform: scale(1.05);
+  }
+  
+  .home-button svg {
+    width: 20px;
+    height: 20px;
+    fill: #ffffff;
+  }
+  
