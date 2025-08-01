@@ -39,45 +39,61 @@ const DonutGauge = React.memo(
       return () => cancelAnimationFrame(animationFrame);
     }, [finalPercent]);
 
+    const sizeClassMap = {
+      1: "donut-large",
+      2: "donut-medium",
+      3: "donut-small",
+    };
+
     return (
-      <div className="donut-chart">
-        <h4 className="label">{label}</h4>
+      <div className={`donut-chart ${sizeClassMap[rank] || ""}`}>
+        {/* 1. 순위를 도넛 위로 이동 */}
+        {isQualified && (
+          <div className="ShortFall">
+            {rank}순위
+          </div>
+        )}
+
+        {/* 2. 도넛 안에는 label 표시 */}
         <CircularProgressbarWithChildren
           value={progress}
           maxValue={100}
           styles={buildStyles({
             pathColor: isQualified
               ? `rgba(${color}, 0.6)`
-              : "rgba(255, 0, 0, 0.6)",
+              : "rgba(155, 1, 1, 0.66)",
             trailColor: "rgba(255, 255, 255, 0.1)",
           })}
+          className={isQualified ? "donut-glow" : ""}
         >
-          {isQualified && (
-            <div
-              className="ShortFall"
-              style={{
-                fontSize: 18,
-                color: "#fff",
-                fontWeight: "bold",
-                textShadow: "0 0 8px rgba(255,255,255,0.1)",
-              }}
-            >
-              {rank}순위
-            </div>
-          )}
+          <div
+            className="donut-label"
+            style={{
+              fontSize: rank === 1 ? 24 : 16,
+              fontWeight: rank === 1 ? 800 : 600,
+              color: rank === 1 ? "#fff" : "#ccc",
+              textAlign: "center",
+              textShadow: "0 0 4px rgba(0,0,0,0.3)",
+              lineHeight: 1.2,
+            }}
+          >
+            {label}
+          </div>
         </CircularProgressbarWithChildren>
         {!isQualified && disableReason && (
           <div
             className="danger-warning"
-            style={{ marginTop: 8, fontWeight: "bold", color: "red" }}
+            style={{ marginTop: 8, fontWeight: "bold"}}
           >
-            <span className="eyes" style={{ marginRight: 4 }}>
-              {disableReason === "수술 불가" ||
-              disableReason.includes("수술 불가")
-                ? "❌"
-                : "👁️"}
-            </span>
-            {disableReason}
+            <div>
+              <span style={{ marginRight: 4 }}>
+                {disableReason.includes("수술 불가") ? "❌" : "👁️"}
+              </span>
+              수술 불가
+            </div>
+            <div>
+              {disableReason.match(/\((.*?)\)/)?.[0] ?? disableReason}
+            </div>
           </div>
         )}
       </div>
@@ -206,8 +222,8 @@ export default function SlideContainer({ data }) {
           disableReason: p.ablationTooMuch
             ? "수술 불가 (절삭량 과다)"
             : p.myopiaOutOfRange
-            ? "수술 불가 (근시 기준 미충족)"
-            : "각막 얇음",
+              ? "수술 불가 (근시 기준 미충족)"
+              : "(각막 얇음)",
         })),
       ];
 

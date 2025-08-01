@@ -8,7 +8,7 @@
   /* 거의 흰색에 약간 투명 */
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  padding: 30px 40px;
+  padding: 10px 40px;
   backdrop-filter: blur(12px);
   /* 뒤 배경을 흐릿하게 */
   -webkit-backdrop-filter: blur(12px);
@@ -141,7 +141,7 @@ th {
 .summary-section {
   display: flex;
   align-items: flex-start;
-  margin: 30px 0;
+  margin: 10px 0;
   gap: 20px;
 }
 
@@ -270,4 +270,214 @@ th {
   margin-top: 4px;
   color: white;
   font-weight: 700;
+}
+
+.graph-row-container {
+  display: flex;
+  justify-content: center;
+  gap: 100px; /* 그래프 간 여백 */
+}
+
+
+/* 근시 바 */
+.line-graph-wrapper {
+  width: 40%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #ffffff; /* 전체 파란색 */
+  font-size: 0.9rem;
+}
+
+/* 위 텍스트 : 좌/중/우 정렬 */
+.line-graph-top-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.labels {
+  font-size: 0.9rem;
+}
+
+.labels.farsighted {
+  width: 15%;
+  text-align: left;
+}
+.labels.emmetropia {
+  width: 15%;
+  text-align: center;
+}
+.labels.myopia {
+  width: 70%;
+  text-align: right;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.center-align {
+  text-align: left;
+}
+
+.right-align {
+  text-align: right;
+}
+
+/* 수평 긴 선 + 세로 구분선 컨테이너 */
+.divider-line-container {
+  position: relative;
+  height: 20px; /* 여유 줘서 세로선 길게 */
+}
+
+/* 긴 수평선 */
+.divider-line-container .horizontal-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #7cc8ff;
+  transform: translateY(-50%);
+  border-radius: 1.5px;
+}
+
+/* 공통 세로선 */
+.divider-line-container .vertical-line {
+  position: absolute;
+  width: 2px;
+  background-color:#7cc8ff;
+}
+
+/* 기본 세로선: 위에서 10px ~ 아래 10px */
+.divider-line-container .vertical-line.line2,
+.divider-line-container .vertical-line.line3,
+.divider-line-container .vertical-line.line4 {
+  top: 20%;
+  bottom: 10%;
+}
+
+/* 길게 보이게 할 세로선: line0, line1, line5 */
+.divider-line-container .vertical-line.line0,
+.divider-line-container .vertical-line.line1,
+.divider-line-container .vertical-line.line5 {
+  top: 0;
+  bottom: 0;
+}
+
+.divider-line-container .vertical-line.line0 {
+  left: 0%;
+}
+
+.divider-line-container .vertical-line.line1 {
+  left: 20%;
+}
+
+.divider-line-container .vertical-line.line2 {
+  left: 40%;
+}
+
+.divider-line-container .vertical-line.line3 {
+  left: 60%;
+}
+
+.divider-line-container .vertical-line.line4 {
+  left: 80%;
+}
+
+.divider-line-container .vertical-line.line5 {
+  left: 100%;
+}
+
+
+/* 범위 라벨 (0 ~ -3D 등) */
+.myopia-range-labels {
+  display: flex;
+  margin-bottom: 2px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  justify-content: flex-start;
+
+}
+
+/* 각 구간 넓이 설정 */
+.myopia-range-labels span {
+  flex-basis: 30%;
+  text-align: center;
+}
+
+/* 명칭 라벨 (경도, 중증도, 고도, 초고도) */
+.myopia-name-labels {
+  display: flex;
+  font-size: 12px;
+  color: #dddddd;
+  justify-content: flex-start;
+
+}
+
+.myopia-name-labels span {
+  flex-basis: 30%;
+  text-align: center;
+}
+
+/* 난시 바 */
+/* 기본 세로선: 위에서 10px ~ 아래 10px */
+.divider-line-container .vertical-line.line6,
+.divider-line-container .vertical-line.line7,
+.divider-line-container .vertical-line.line8 {
+  top: 20%;
+  bottom: 10%;
+}
+
+.divider-line-container .vertical-line.line0 {
+  left: 0%;
+}
+
+.divider-line-container .vertical-line.line6{
+  left: 25%;
+}
+
+.divider-line-container .vertical-line.line7 {
+  left: 50%;
+}
+
+.divider-line-container .vertical-line.line8 {
+  left: 75%;
+}
+
+.divider-line-container .vertical-line.line5 {
+  left: 100%;
+}
+
+/* 범위 라벨 (0 ~ -3D 등) */
+.myopia-range-labels1 {
+  display: flex;
+  margin-bottom: 2px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  justify-content: flex-start;
+
+}
+
+/* 각 구간 넓이 설정 */
+.myopia-range-labels1 span {
+  flex-basis: 30%;
+  text-align: center;
+}
+
+/* 명칭 라벨 (경도, 중증도, 고도, 초고도) */
+.myopia-name-labels1 {
+  display: flex;
+  font-size: 12px;
+  color: #dddddd;
+  justify-content: flex-start;
+
+}
+
+.myopia-name-labels1 span {
+  flex-basis: 30%;
+  text-align: center;
 }

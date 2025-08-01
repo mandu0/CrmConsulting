@@ -67,7 +67,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("../public/bg_03.gif") center -1% / 100% no-repeat; 
+  background: url("../public/bg_03.gif") center -1% / 100% no-repeat;
   opacity: 0.2;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -106,13 +106,14 @@
 
 
 .label {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
+
 .recommendation-row {
   display: flex;
   justify-content: center;
   /* 가운데 정렬 */
-  gap: 200px;
+  gap: 220px;
   /* 좌우 간격 */
   flex-wrap: wrap;
   /* 화면 좁을 때 아래로 내려감 */
@@ -120,27 +121,63 @@
 }
 
 
-
 .donut-container {
+  height: 190px;
   display: flex;
-  justify-content: space-around;
-  /* flex-wrap: wrap; 제거하거나 아래처럼 변경 */
-  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 50px;
   gap: 30px;
 }
 
 .donut-chart {
-  width: 180px;
-  /* 크기 키우기 */
-  height: 180px;
-  /* 높이 추가 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 150px;
+  height: 120px;
   text-align: center;
   color: rgba(255, 255, 255, 0.8);
   position: relative;
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5));
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.377));
   /* 더 진한 그림자 */
-  transition: transform 0.3s ease;
+  transition: transform 1s ease;
   /* 부드러운 변환 */
+}
+
+.donut-large {
+  width: 210px;
+  height: 210px;
+}
+.donut-medium {
+  width: 150px;
+  height: 150px;
+}
+.donut-small {
+  width: 120px;
+  height: 120px;
+}
+
+/* 수술 가능 도넛은 반짝임 효과 */
+@keyframes donutGlow {
+
+  0%,
+  100% {
+    stroke: #62b9ff;
+    stroke-width: 6;
+    opacity: 0.5;
+  }
+
+  50% {
+    stroke: #00b7ff;
+    stroke-width: 8;
+    opacity: 1;
+  }
+}
+
+
+.donut-glow .CircularProgressbar-path {
+  animation: donutGlow 2s ease-in-out infinite;
 }
 
 .donut-chart:hover {
@@ -148,32 +185,23 @@
   /* 마우스 올리면 살짝 확대 */
 }
 
-/* 도넛 내부 숫자 폰트 크기 및 빛나는 그림자 조절 */
-.donut-chart>div {
+/* 도넛 순위 */
+.ShortFall {
   font-size: 1.1rem !important;
   /* 숫자 크기 확대 */
   font-weight: 800;
+  margin-bottom: 10px;
 }
 
 
 .danger-warning {
-  margin-top: 6px;
-  color: #ff0000;
+  margin-top: 8px;
   font-weight: bold;
-  animation: blink 1s infinite;
-  margin-top: 10px;
-}
-
-@keyframes blink {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.6;
-  }
+  font-size: 16px;
+  color: rgb(238, 2, 2);
+  text-align: center;
+  max-width: 100%;
+  word-wrap: break-word;
 }
 
 .eyeColor {
@@ -184,7 +212,7 @@
 }
 
 .eyes {
-font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .slide-page2 {

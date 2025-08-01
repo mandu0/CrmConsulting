@@ -224,6 +224,76 @@ export default function ResultComponent({ data, onResidualCalculated }) {
           </div>
         </div>
 
+
+        {/* 원시/근시 & 난시 그래프 나란히 정렬 */}
+        <div className="graph-row-container">
+          {/* 원시, 정시, 근시 그래프 */}
+          <div className="line-graph-wrapper">
+            <div className="line-graph-top-labels">
+              <span className="labels farsighted left-align">원시 (+)</span>
+              <span className="labels emmetropia center-align">정시 (0)</span>
+              <span className="labels myopia right-align">근시 (-)</span>
+            </div>
+
+            <div className="divider-line-container">
+              <div className="horizontal-line"></div>
+              <div className="vertical-line line0"></div>
+              <div className="vertical-line line1"></div>
+              <div className="vertical-line line2"></div>
+              <div className="vertical-line line3"></div>
+              <div className="vertical-line line4"></div>
+              <div className="vertical-line line5"></div>
+            </div>
+
+            <div className="myopia-range-labels">
+              <span></span>
+              <span>0 ~ -3D</span>
+              <span>-3D ~ -6D</span>
+              <span>-6D ~ -10D</span>
+              <span>-10D이상</span>
+            </div>
+
+            <div className="myopia-name-labels">
+              <span></span>
+              <span>경도</span>
+              <span>중증도</span>
+              <span>고도</span>
+              <span>초고도</span>
+            </div>
+          </div>
+
+          {/* 난시 그래프 */}
+          <div className="line-graph-wrapper">
+            <div className="line-graph-top-labels">
+              <span className="labels farsighted left-align">난시</span>
+            </div>
+
+            <div className="divider-line-container">
+              <div className="horizontal-line"></div>
+              <div className="vertical-line line0"></div>
+              <div className="vertical-line line6"></div>
+              <div className="vertical-line line7"></div>
+              <div className="vertical-line line8"></div>
+              <div className="vertical-line line5"></div>
+            </div>
+
+            <div className="myopia-range-labels1">
+              <span>0 ~ -1D</span>
+              <span>-1D ~ -2D</span>
+              <span>-2D ~ -3D</span>
+              <span>-3D이상</span>
+            </div>
+
+            <div className="myopia-name-labels1">
+              <span>경도</span>
+              <span>중증도</span>
+              <span>고도</span>
+              <span>초고도</span>
+            </div>
+          </div>
+        </div>
+
+
         <div className="eyes-wrapper">
           {/* 오른쪽 눈 */}
           <div className="eye-block-container">
